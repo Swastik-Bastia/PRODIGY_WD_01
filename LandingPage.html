@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: transparent;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgb(252, 126, 223);
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: clamp(14px, 2vw, 18px);
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: rgb(243, 234, 243);
+        }
+        .content {
+            height: 200vh;
+            padding-top: 60px;
+            text-align: center;
+            color: rgb(5, 170, 165);
+        }
+        div{ 
+            inline-size:none;
+        }
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            background: #333;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="logo" style="color: rgb(3, 177, 180); font-weight: bold; font-size: clamp(16px, 3vw, 24px);">LOGO</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+        </div>
+    </nav>
+    <div class="content">
+        <h1>Welcome to Swastik Website</h1>
+        <p>Scroll down to see the navbar effect</p>
+    </div>
+    <footer>
+        <p>&copy; Copyright by Swastik</p>
+    </footer>
+    
+    <script>
+        window.addEventListener("scroll", function() {
+            var navbar = document.getElementById("navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+</html>
